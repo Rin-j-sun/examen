@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<link type="text/css" href="style/index.css" rel="stylesheet">
+
+<h1>Добро пожаловать на наш портал</h1>
+{% if user.is_authenticated %}
+    <h1>Список заявок</h1>
+
+<p>Временная метка:{{ application.date }}</p>
+<p>Название: {{ application.title }}</p>
+<p>Категория: {{ application.category }}</p>
+<p>Фотография: <img src="{{ application.photo_file.url }}"></p>
+
+
+
+
+{% endif %}
+{% endblock %}
+
